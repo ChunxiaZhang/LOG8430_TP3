@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Sizemenu
+Bundle-SymbolicName: com.pxz.log8430.sizemenu;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.pxz.log8430.sizemenu.Activator
+Bundle-Vendor: PXZ
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.pxz.log8430.menutp3;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

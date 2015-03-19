@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.pxz.menutp3" name="com.pxz.menutp3" schema="schema/com.pxz.menutp3.exsd"/>
+   <extension
+         point="org.eclipse.ui.menus">
+         <menuContribution 
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions"
+            class="com.pxz.log8430.menutp3.DefineMenuTp3">
+        </menuContribution>
+   </extension>
+
+</plugin>

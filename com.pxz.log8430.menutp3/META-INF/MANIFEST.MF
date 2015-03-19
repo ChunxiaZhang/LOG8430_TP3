@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Menutp3
+Bundle-SymbolicName: com.pxz.log8430.menutp3;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.pxz.log8430.menutp3.Activator
+Bundle-Vendor: PXZ
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.pxz.log8430.menutp3

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.pxz.menutp3"
+         id="com.pxz.menutp3">
+        <menutp3
+         	name="SIZE"
+         	for_folder="true"
+         	for_file="true">
+        </menutp3>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+
+	<extension
+         point="org.eclipse.ui.handlers">
+      	<handler
+            class="com.pxz.log8430.sizemenu.FolderFileSizeHandler"
+            commandId="com.pxz.log8430.sizemenu.FolderFileSizeHandler">
+      	</handler>
+	</extension>
+</plugin>
