@@ -1,4 +1,4 @@
-package com.pxz.log8430.sizemenu;
+package com.pxz.log8430.path;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -9,7 +9,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.pxz.log8430.sizemenu"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "com.pxz.log8430.path"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;

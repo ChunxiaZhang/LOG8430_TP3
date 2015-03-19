@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Sizemenu
-Bundle-SymbolicName: com.pxz.log8430.sizemenu;singleton:=true
+Bundle-Name: Path
+Bundle-SymbolicName: com.pxz.log8430.path;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.pxz.log8430.sizemenu.Activator
+Bundle-Activator: com.pxz.log8430.path.Activator
 Bundle-Vendor: PXZ
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

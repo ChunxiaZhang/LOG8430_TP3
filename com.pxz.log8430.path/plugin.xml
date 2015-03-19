@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.pxz.menutp3" id="com.pxz.menutp3">
+         <menu
+         	name="PATH"
+         	for_file="true"
+         	for_folder="true"
+         	commandId="com.pxz.log8430.path.showPath">
+         </menu>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+         <command
+         	name="PATH"
+         	id="com.pxz.log8430.path.showPath"
+         	defaultHandler="com.pxz.log8430.path.ShowPath">
+         </command>
+   </extension>
+
+</plugin>

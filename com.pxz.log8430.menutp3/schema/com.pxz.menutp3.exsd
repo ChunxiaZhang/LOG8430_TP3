@@ -44,23 +44,30 @@
       </complexType>
    </element>
 
-   <element name="menutp3">
+   <element name="menu">
       <complexType>
-         <attribute name="name" type="string" use="required">
+         <attribute name="name" type="string">
             <annotation>
                <documentation>
                   
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="for_folder" type="string" use="required">
+         <attribute name="for_folder" type="string">
             <annotation>
                <documentation>
                   
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="for_file" type="string" use="required">
+         <attribute name="for_file" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="commandId" type="string">
             <annotation>
                <documentation>
                   
