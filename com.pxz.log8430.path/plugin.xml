@@ -6,7 +6,7 @@
 
          <commandDescription
          	commandLabel="Show Absolute Path"
-			commandTargetType="org.eclipse.jdt.core.ICompilationUnit"
+			commandTargetType="org.eclipse.jdt.core.ICompilationUnit,org.eclipse.jdt.core.IPackageFragmentRoot,org.eclipse.jdt.core.IPackageFragment"
          	commandId="com.pxz.log8430.path.showPath">
          </commandDescription>
    </extension>

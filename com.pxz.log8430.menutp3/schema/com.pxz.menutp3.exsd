@@ -63,7 +63,6 @@ IMPORTANT : you can only have only one command per each extension.
             </annotation>
          </attribute>
          <attribute name="commandId" type="string" use="required">
-
             <annotation>
                <documentation>
                   To use this extension, you should specify the commandId you defined for your command.
@@ -83,13 +82,13 @@ http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fr
                <documentation>
                   The extensions which extend this extension point should specify the target type of their command.
 
-e.g., &quot;ICompilationUnit&quot;.
+e.g., &quot;org.eclipse.jdt.core.ICompilationUnit&quot;.
 
  If a command can be used for several types, it should be seperated with &quot;,&quot;.
  
- e.g., &quot;ICompilationUnit,IPackageFragment&quot;
+ e.g., &quot;org.eclipse.jdt.core.ICompilationUnit,org.eclipse.jdt.core.IPackageFragment&quot;
  
- It is your responsibility to assure that it is a valid type.
+ It is your responsibility to assure that it is a valid type. Please use the type in org.eclipse.jdt.core package.
  
 IMPORTANT :  If it is not specified, your command won&apos;t be shown in any circumstance.
                </documentation>

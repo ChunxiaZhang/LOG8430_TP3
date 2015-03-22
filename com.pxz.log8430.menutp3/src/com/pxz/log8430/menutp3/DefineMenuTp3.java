@@ -4,9 +4,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IPackageFragment;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -16,7 +13,6 @@ import org.eclipse.ui.menus.CommandContributionItemParameter;
 import org.eclipse.ui.menus.ExtensionContributionFactory;
 import org.eclipse.ui.menus.IContributionRoot;
 import org.eclipse.ui.services.IServiceLocator;
-import org.eclipse.jdt.core.ICompilationUnit;
 
 public class DefineMenuTp3 extends ExtensionContributionFactory {
 	
@@ -67,33 +63,8 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 			
 			
 			if (menuLabel != null && commandID != null && commandTargetType != null){
-			
-				// To judge if the selected element's type correspond to the specified target type
-				boolean selectedElementTypeCorrespondCommandTargetType = false;
 				
-				String[] types = commandTargetType.split(",");
-				
-				for (int k=0; k < types.length; k++){
-					if(selectedElement instanceof ICompilationUnit) {
-						selectedElementTypeCorrespondCommandTargetType = true;
-						break;
-					} /*
-					try {
-						//Class<?> aClass = Class.forName("org.eclipse.jdt.core.ICompilationUnit");//types[k]);
-						
-						//if (aClass.isInstance(selectedElement)){
-						if(selectedElement instanceof ICompilationUnit) {
-							selectedElementTypeCorrespondCommandTargetType = true;
-							break;
-						}
-					} catch(ClassNotFoundException ex) {
-				        System.out.println(ex.toString());
-				    }*/
-				}
-				
-				
-				if (selectedElementTypeCorrespondCommandTargetType){
-					
+				if (isInstanceOf(selectedElement, commandTargetType)){
 					// add the sub-extension's command to the popup menu
 					CommandContributionItemParameter p = 
 		                    new CommandContributionItemParameter(
@@ -116,31 +87,25 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 		
 	}
 
-	private boolean isSuitable(String type) {
-		boolean suitable = false;
-		if(!type.contains(",")) {
-			if("folder".equals(type) && isFolder) {
-				suitable = true;
-			} else if("file".equals(type) && isFile) {
-				suitable = true;
-			}
-		} else {
+	// used to judge if the element is instanceof a give string of type, the type can be a list of types seperated by ','
+	private boolean isInstanceOf(Object element,String type) {
+		boolean selectedElementTypeCorrespondCommandTargetType = false;
 		
-			String[] types = type.split(",");
+		String[] types = type.split(",");
 		
-			System.out.println(types[0] + types[1]);
-		
-			if(types.length > 0) {
-				for(int k = 0; k < types.length; k++) {
-					if("folder".equals(types[k]) && isFolder) {
-						suitable = true;
-					}
-					if("file".equals(types[k]) && isFile) {
-						suitable = true;
-					}
+		for (int k=0; k < types.length; k++){
+			try {
+				Class<?> aClass = Class.forName(types[k]);
+				
+				if (aClass.isInstance(element)){
+					selectedElementTypeCorrespondCommandTargetType = true;
+					break;
 				}
-			}
+			} catch(ClassNotFoundException ex) {
+		        System.out.println(ex.toString());
+		    }
 		}
-		return suitable;
+		
+		return selectedElementTypeCorrespondCommandTargetType;
 	}
 }
