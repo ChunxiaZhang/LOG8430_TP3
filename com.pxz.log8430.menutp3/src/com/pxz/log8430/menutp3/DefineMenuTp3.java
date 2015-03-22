@@ -64,7 +64,7 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 			
 			if (menuLabel != null && commandID != null && commandTargetType != null){
 				
-				if (isInstanceOf(selectedElement, commandTargetType)){
+				if (isInstanceOf(selectedElement, commandTargetType.split(","))){
 					// add the sub-extension's command to the popup menu
 					CommandContributionItemParameter p = 
 		                    new CommandContributionItemParameter(
@@ -87,12 +87,10 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 		
 	}
 
-	// used to judge if the element is instanceof a give string of type, the type can be a list of types seperated by ','
-	private boolean isInstanceOf(Object element,String type) {
+	// used to judge if the element is instanceof a list string of type,
+	private boolean isInstanceOf(Object element,String[] types) {
 		boolean selectedElementTypeCorrespondCommandTargetType = false;
-		
-		String[] types = type.split(",");
-		
+				
 		for (int k=0; k < types.length; k++){
 			try {
 				Class<?> aClass = Class.forName(types[k]);
