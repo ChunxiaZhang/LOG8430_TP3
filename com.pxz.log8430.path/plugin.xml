@@ -5,8 +5,7 @@
          point="com.pxz.menutp3" id="com.pxz.menutp3">
          <menu
          	name="PATH"
-         	for_file="true"
-         	for_folder="true"
+         	type="file,folder"
          	commandId="com.pxz.log8430.path.showPath">
          </menu>
    </extension>

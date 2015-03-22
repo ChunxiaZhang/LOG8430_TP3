@@ -53,14 +53,7 @@
                </documentation>
             </annotation>
          </attribute>
-         <attribute name="for_folder" type="string">
-            <annotation>
-               <documentation>
-                  
-               </documentation>
-            </annotation>
-         </attribute>
-         <attribute name="for_file" type="string">
+         <attribute name="type" type="string" use="required">
             <annotation>
                <documentation>
                   
