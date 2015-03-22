@@ -44,34 +44,57 @@
       </complexType>
    </element>
 
-   <element name="menu">
+   <element name="commandDescription">
+      <annotation>
+         <documentation>
+            You need to describe the command of your extension here.
+IMPORTANT : you can only have only one command per each extension.
+         </documentation>
+      </annotation>
       <complexType>
-         <attribute name="name" type="string">
+         <attribute name="commandLabel" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The label of the command shows in the popup menu.
                </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
             </annotation>
          </attribute>
-         <attribute name="for_folder" type="string">
+         <attribute name="commandId" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  To use this extension, you should specify the commandId you defined for your command.
+
+The Command in sub-extensions should be defined using the org.eclipse.ui.commands extension point. 
+
+See more in : 
+http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fextension-points%2Forg_eclipse_ui_commands.html
                </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
             </annotation>
          </attribute>
-         <attribute name="for_file" type="string">
+         <attribute name="commandTargetType" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The extensions which extend this extension point should specify the target type of their command.
+
+e.g., &quot;ICompilationUnit&quot;.
+
+ If a command can be used for several types, it should be seperated with &quot;,&quot;.
+ 
+ e.g., &quot;ICompilationUnit,IPackageFragment&quot;
+ 
+ It is your responsibility to assure that it is a valid type.
+ 
+IMPORTANT :  If it is not specified, your command won&apos;t be shown in any circumstance.
                </documentation>
-            </annotation>
-         </attribute>
-         <attribute name="commandId" type="string">
-            <annotation>
-               <documentation>
-                  
-               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>
