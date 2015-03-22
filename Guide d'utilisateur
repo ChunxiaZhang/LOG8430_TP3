@@ -1,0 +1,11 @@
+Guide d'utilisateur
+
+Le TP est dévélopé et testé sur Eclipse - Luna Service Release 1 4.4.1. Nous ne pouvons pas garantie qu'il est utilisable dans les autres environment.
+
+1. File -> Import -> Existing Projects into Workspace -> choisir le "root directory" le dossier com.pxz.log8430.menutp3. 
+
+2. File -> Import -> Existing Projects into Workspace -> choisir le "root directory" le dossier com.pxz.log8430.path.
+
+3. Choisir META-INF/MANIFEST.MF, cliquez droit -> Run As -> Run Configurations, cliquez l'onglet "Plug-ins" -> choissez les deux projects importé ainsi que tous les plugin dans  "Target Platform" -> cliquez "Run"
+
+4. Dans le nouveau Eclipse ouverte, choissez "Project Explorer", cliquez droit à un ICompilationUnit ou un IPackageFragment (c'est-à-dire un fichier ou un dossier), vous trouverez un "Command Menu", cliquez "Show Absolute Path". Vous voyez une fenêtre vous dit le chemin absolu de cet élément choisi.

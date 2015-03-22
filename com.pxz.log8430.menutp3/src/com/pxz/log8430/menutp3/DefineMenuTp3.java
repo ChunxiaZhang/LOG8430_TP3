@@ -69,7 +69,7 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 					CommandContributionItemParameter p = 
 		                    new CommandContributionItemParameter(
 		                            serviceLocator, 
-		                            extensions[i].getUniqueIdentifier(), 
+		                            null, 
 		                            commandID,
 		                            CommandContributionItem.STYLE_PUSH);
 		
