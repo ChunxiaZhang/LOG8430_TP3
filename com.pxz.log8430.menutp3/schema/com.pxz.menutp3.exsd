@@ -63,6 +63,7 @@ IMPORTANT : you can only have only one command per each extension.
             </annotation>
          </attribute>
          <attribute name="commandId" type="string" use="required">
+
             <annotation>
                <documentation>
                   To use this extension, you should specify the commandId you defined for your command.

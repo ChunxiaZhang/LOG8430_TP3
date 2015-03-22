@@ -3,6 +3,7 @@
 <plugin>
    <extension
          point="com.pxz.menutp3" id="com.pxz.menutp3">
+
          <commandDescription
          	commandLabel="Show Absolute Path"
 			commandTargetType="org.eclipse.jdt.core.ICompilationUnit"

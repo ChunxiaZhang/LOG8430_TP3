@@ -7,6 +7,8 @@ Bundle-Activator: com.pxz.log8430.path.Activator
 Bundle-Vendor: PXZ
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- com.pxz.log8430.menutp3;bundle-version="1.0.0"
+ com.pxz.log8430.menutp3;bundle-version="1.0.0",
+ org.eclipse.core.resources;bundle-version="3.9.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.jdt.core

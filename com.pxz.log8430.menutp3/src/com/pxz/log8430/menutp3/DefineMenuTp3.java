@@ -4,6 +4,9 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IPackageFragment;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -22,12 +25,15 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 	final private String CONTTRIBUTE_COMMAND_TARGET_TYPE = "commandTargetType";
 	final private String CONTTRIBUTE_COMMAND_ID = "commandId";
 
+	boolean isFolder;
+	boolean isFile;
+	
 	@Override
 	public void createContributionItems(IServiceLocator serviceLocator,
 			IContributionRoot additions) {
 		
 		System.out.println("start to create contribution items");
-				
+
 		IExtensionPoint ep = Platform.getExtensionRegistry().getExtensionPoint(EXTENTION_ID);
 		
 		IExtension[] extensions = ep.getExtensions(); //get all extensions that extend this extension point
@@ -100,6 +106,7 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 		            menu.add(new CommandContributionItem(p));
 				}
 			}
+
 		}
 		
 		// if there is no correspond command, don't add the menu to the root
@@ -109,4 +116,31 @@ public class DefineMenuTp3 extends ExtensionContributionFactory {
 		
 	}
 
+	private boolean isSuitable(String type) {
+		boolean suitable = false;
+		if(!type.contains(",")) {
+			if("folder".equals(type) && isFolder) {
+				suitable = true;
+			} else if("file".equals(type) && isFile) {
+				suitable = true;
+			}
+		} else {
+		
+			String[] types = type.split(",");
+		
+			System.out.println(types[0] + types[1]);
+		
+			if(types.length > 0) {
+				for(int k = 0; k < types.length; k++) {
+					if("folder".equals(types[k]) && isFolder) {
+						suitable = true;
+					}
+					if("file".equals(types[k]) && isFile) {
+						suitable = true;
+					}
+				}
+			}
+		}
+		return suitable;
+	}
 }
