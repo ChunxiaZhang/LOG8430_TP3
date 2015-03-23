@@ -88,8 +88,6 @@ e.g., &quot;org.eclipse.jdt.core.ICompilationUnit&quot;.
  
  e.g., &quot;org.eclipse.jdt.core.ICompilationUnit,org.eclipse.jdt.core.IPackageFragment&quot;
  
- It is your responsibility to assure that it is a valid type. Please use the type in org.eclipse.jdt.core package.
- 
 IMPORTANT :  If it is not specified, your command won&apos;t be shown in any circumstance.
                </documentation>
                <appinfo>
