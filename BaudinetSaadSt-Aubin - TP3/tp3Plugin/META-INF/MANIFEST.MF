@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Plugin
+Bundle-SymbolicName: tp3.plugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: tp3.plugin.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.expressions,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.core.resources
+Export-Package: tp3.plugin,
+ tp3.plugin.commandExtension,
+ tp3.plugin.commands,
+ tp3.plugin.models
+

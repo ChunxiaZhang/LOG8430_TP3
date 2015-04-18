@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TestCommand
+Bundle-SymbolicName: testCommand;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: testcommand.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ tp3.plugin;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: tp3.plugin.commands,
+ tp3.plugin.models

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension-point
+		id="tp3.plugin.command"
+		name="tp3.plugin.command"
+		schema="schema/tp3.plugin.command.exsd"
+	/>
+    <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions"
+          	class="tp3.plugin.commandExtension.InterfaceBuilder">
+      </menuContribution>
+   </extension>    
+    <extension
+    	point="org.eclipse.ui.commands">
+	   <command
+	      id="tp3.plugin.commands.loadedCommands"
+	      name="Loaded commands">
+	   </command>
+   </extension>
+   <extension
+      point="org.eclipse.ui.handlers">
+	   <handler
+	         class="tp3.plugin.commandExtension.CommandHandler"
+	         commandId="tp3.plugin.commands.loadedCommands">
+	   </handler>
+   </extension>
+
+</plugin>

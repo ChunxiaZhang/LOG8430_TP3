@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="tp3.plugin.command">
+      <command
+            class="testcommand.testCommand"
+            name="Show File Name"></command>
+   </extension>
+</plugin>
